@@ -9,7 +9,7 @@ function swap(el1, el2) {
 }
 
 // Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
-function disableSortingBtn(){
+function disableSortingBtn() {
     document.querySelector(".bubbleSort").disabled = true;
     document.querySelector(".insertionSort").disabled = true;
     document.querySelector(".mergeSort").disabled = true;
@@ -21,7 +21,7 @@ function disableSortingBtn(){
 }
 
 // Enables sorting buttons used in conjunction with disable
-function enableSortingBtn(){
+function enableSortingBtn() {
     document.querySelector(".bubbleSort").disabled = false;
     document.querySelector(".insertionSort").disabled = false;
     document.querySelector(".mergeSort").disabled = false;
@@ -33,38 +33,45 @@ function enableSortingBtn(){
 }
 
 // Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
-function disableSizeSlider(){
+function disableSizeSlider() {
     document.querySelector("#size_input").disabled = true;
 }
 
 // Enables size slider used in conjunction with disable
-function enableSizeSlider(){
+function enableSizeSlider() {
     document.querySelector("#size_input").disabled = false;
 }
 
 // Disables newArray buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
-function disableNewArrayBtn(){
+function disableNewArrayBtn() {
     document.querySelector(".new").disabled = true;
 }
 
-// Enables newArray buttons used in conjunction with disable
-function enableNewArrayBtn(){
+function enableNewArrayBtn() {
     document.querySelector(".new").disabled = false;
 }
 
+function enableStopSortingBtn() {
+    document.querySelector(".stop").disabled = false;
+}
+
+function disableStopSortingBtn() {
+    document.querySelector(".stop").disabled = true;
+}
+
 // Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
-function waitforme(milisec) { 
-    return new Promise(resolve => { 
-        setTimeout(() => { resolve('') }, milisec); 
-    }) 
+function delayTime(milisec) {
+    return new Promise(resolve => {
+        setTimeout(() => { resolve('') }, milisec);
+    })
 }
 
 // Selecting size slider from DOM
 let arraySize = document.querySelector('#size_input');
 
 // Event listener to update the bars on the UI
-arraySize.addEventListener('input', function(){
-    console.log(arraySize.value, typeof(arraySize.value));
+arraySize.addEventListener('input', function () {
+    console.log(arraySize.value, typeof (arraySize.value));
     createNewArray(parseInt(arraySize.value));
 });
 
@@ -75,8 +82,8 @@ let delay = 260;
 let delayElement = document.querySelector('#speed_input');
 
 // Event listener to update delay time 
-delayElement.addEventListener('input', function(){
-    console.log(delayElement.value, typeof(delayElement.value));
+delayElement.addEventListener('input', function () {
+    console.log(delayElement.value, typeof (delayElement.value));
     delay = 320 - parseInt(delayElement.value);
 });
 
@@ -103,7 +110,7 @@ function createNewArray(noOfBars = 60) {
     // create multiple element div using loop and adding class 'bar col'
     for (let i = 0; i < noOfBars; i++) {
         const bar = document.createElement("div");
-        bar.style.height = `${barArray[i]*2}px`;
+        bar.style.height = `${barArray[i] * 2}px`;
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
@@ -119,7 +126,7 @@ function deleteChild() {
 
 // Selecting newarray button from DOM and adding eventlistener
 const newArrayButton = document.querySelector(".new");
-newArrayButton.addEventListener("click", function(){
+newArrayButton.addEventListener("click", function () {
     console.log("From newArray " + arraySize.value);
     console.log("From newArray " + delay);
     enableSortingBtn();
