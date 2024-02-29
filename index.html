@@ -16,23 +16,22 @@
     <nav class="navbar dark-background">
         <a class="navbar-brand text-color" href="#">Sorting Visualizer</a>
         <span class="navbar-text text-color">
-            <a href = "https://github.com/1priteshdhumal2/Sorting-Visualizer.git">Source Code</a>
+            <a href="https://github.com/1priteshdhumal2/Sorting-Visualizer.git">Source Code</a>
         </span>
     </nav>
 
-    <div id="sorting" class="flex-container">
+    <div id="sorting" class="flex-container"></div>
 
-    </div>
-
-    <div class="col range-input " id ="input-panel">
-        <span id ="size" class="label">Size
-            <input id ="size_input" type="range" min="1" max="100" value=50 style="margin-left: 60px;">
+    <div class="col range-input" id="input-panel">
+        <span id="size" class="label">Size
+            <input id="size_input" type="range" value=50 min="1" max="100" style="margin-left: 60px;">
         </span>
         <span id="speed" class="label">Speed
-            <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60 style="margin-left: 60px;">
+            <input id="speed_input" type="range" min="20" max="300" value=60 style="margin-left: 60px;">
         </span>
     </div>
 
+    </div>
     <div class="btn-group-md btn-group-horizontal center" style="margin-bottom: 15px;">
         <button type="button" class="btn btn-outline-success new" style="margin-right: 5px;">New Array</button>
         <button type="button" class="btn btn-outline-danger stop" style="margin-left: 5px;">Stop Sorting</button>
@@ -55,7 +54,9 @@
             <button type="button" class="btn btn-outline-light quickSort2">Quick Sort(Last Index)</button>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
     <script src="sorting.js" async defer></script>
 </body>
 
