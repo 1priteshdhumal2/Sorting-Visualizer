@@ -1,4 +1,4 @@
-var flag = new Boolean(false);
+let flag = new Boolean(false);
 
 async function bubble() {
     const ele = document.querySelectorAll(".bar");
@@ -34,7 +34,6 @@ bubSortbtn.addEventListener('click', async function () {
 });
 
 
-const stopSortingButton = document.querySelector(".stop");
 stopSortingButton.addEventListener("click", function () {
     disableSortingBtn();
     disableSizeSlider();
