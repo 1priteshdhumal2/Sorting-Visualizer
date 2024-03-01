@@ -2,34 +2,41 @@ var flag = new Boolean(false);
 
 async function bubble() {
     const ele = document.querySelectorAll(".bar");
-    for(let i = 0; i < ele.length-1; i++){
-        for(let j = 0; j < ele.length-i-1; j++){
-            if(flag == true){
+    for (let i = 0; i < ele.length - 1; i++) {
+        for (let j = 0; j < ele.length - i - 1; j++) {
+            if (flag == true) {
                 return;
             }
             ele[j].style.background = '#e43f5a';
-            ele[j+1].style.background = '#e43f5a';
+            ele[j + 1].style.background = '#e43f5a';
         }
-        ele[ele.length-1-i].style.background = 'green';
+        ele[ele.length - 1 - i].style.background = 'green';
     }
     ele[0].style.background = 'green';
 }
 
 const bubSortbtn = document.querySelector(".bubbleSort");
-bubSortbtn.addEventListener('click', async function(){
+bubSortbtn.addEventListener('click', async function () {
+    flag = false;
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
     enableStopSortingBtn();
     await bubble();
-    enableSortingBtn();
-    enableSizeSlider();
+    if(flag==true){
+        disableSpeedSlider();
+    } else {
+        enableSortingBtn();
+        enableSizeSlider();
+    }
     enableNewArrayBtn();
     disableStopSortingBtn();
 });
 
 
 const stopSortingButton = document.querySelector(".stop");
-stopSortingButton.addEventListener("click", function(){
+stopSortingButton.addEventListener("click", function () {
+    disableSortingBtn();
+    disableSizeSlider();
     flag = true;
 })
