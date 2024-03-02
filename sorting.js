@@ -16,8 +16,7 @@ function disableSortingBtn() {
     document.querySelector(".quickSort1").disabled = true;
     document.querySelector(".quickSort2").disabled = true;
     document.querySelector(".selectionSort").disabled = true;
-    document.querySelector(".combSort").disabled = true;
-    document.querySelector(".shellSort").disabled = true;
+    document.querySelector(".heapSort").disabled = true;
 }
 
 // Enables sorting buttons used in conjunction with disable
@@ -28,8 +27,7 @@ function enableSortingBtn() {
     document.querySelector(".quickSort1").disabled = false;
     document.querySelector(".quickSort2").disabled = false;
     document.querySelector(".selectionSort").disabled = false;
-    document.querySelector(".combSort").disabled = false;
-    document.querySelector(".shellSort").disabled = false;
+    document.querySelector(".heapSort").disabled = false;
 }
 
 // Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
@@ -145,3 +143,8 @@ newArrayButton.addEventListener("click", function () {
 });
 
 const stopSortingButton = document.querySelector(".stop");
+stopSortingButton.addEventListener("click", function(){
+    disableSortingBtn();
+    disableSizeSlider();
+    flag = true;
+})

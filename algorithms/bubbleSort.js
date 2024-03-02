@@ -32,10 +32,3 @@ bubSortbtn.addEventListener('click', async function () {
     enableNewArrayBtn();
     disableStopSortingBtn();
 });
-
-
-stopSortingButton.addEventListener("click", function () {
-    disableSortingBtn();
-    disableSizeSlider();
-    flag = true;
-})
