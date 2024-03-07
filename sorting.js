@@ -131,7 +131,7 @@ function deleteChild() {
 // Selecting newarray button from DOM and adding eventlistener
 const newArrayButton = document.querySelector(".new");
 newArrayButton.addEventListener("click", function () {
-    flag = false;
+    hasPressedStop = false;
     enableSpeedSlider();
     console.log("From newArray " + arraySize.value);
     console.log("From newArray " + delay);
@@ -144,5 +144,5 @@ const stopSortingButton = document.querySelector(".stop");
 stopSortingButton.addEventListener("click", function(){
     disableSortingBtn();
     disableSizeSlider();
-    flag = true;
+    hasPressedStop = true;
 })

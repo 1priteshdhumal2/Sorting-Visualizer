@@ -3,12 +3,12 @@ async function partitionLomuto(ele, l, r){
     let i = l - 1;
     ele[r].style.background = 'Cyan'; //pivot
     for(let j = l; j <= r - 1; j++){
-        if(flag == true){
+        if(hasPressedStop == true){
             return;
         }
         ele[j].style.background = 'yellow'; //current element
         await delayTime(delay);
-        if(flag == true){
+        if(hasPressedStop == true){
             return;
         }
         if(parseInt(ele[j].style.height) < parseInt(ele[r].style.height)){
@@ -27,11 +27,11 @@ async function partitionLomuto(ele, l, r){
         }
     }
     i++; 
-    if(flag == true){
+    if(hasPressedStop == true){
         return;
     }
     await delayTime(delay);
-    if(flag == true){
+    if(hasPressedStop == true){
         return;
     }
     swap(ele[i], ele[r]); 
@@ -40,11 +40,11 @@ async function partitionLomuto(ele, l, r){
     ele[r].style.background = 'pink';
     ele[i].style.background = 'green';
 
-    if(flag == true){
+    if(hasPressedStop == true){
         return;
     }
     await delayTime(delay);
-    if(flag == true){
+    if(hasPressedStop == true){
         return;
     }
 
@@ -83,7 +83,7 @@ quickSortbtn.addEventListener('click', async function(){
     disableNewArrayBtn();
     enableStopSortingBtn();
     await quickSort(ele, l, r);
-    if(flag==true){
+    if(hasPressedStop==true){
         disableSpeedSlider();
     } else {
         enableSortingBtn();
