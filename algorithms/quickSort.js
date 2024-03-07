@@ -1,7 +1,7 @@
 async function partitionLomuto(ele, l, r){
 
     let i = l - 1;
-    ele[r].style.background = 'red'; //pivot
+    ele[r].style.background = 'Cyan'; //pivot
     for(let j = l; j <= r - 1; j++){
         if(flag == true){
             return;
