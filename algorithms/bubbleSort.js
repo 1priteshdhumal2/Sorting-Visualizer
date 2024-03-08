@@ -7,6 +7,12 @@ async function bubble() {
             if (hasPressedStop == true) {
                 return;
             }
+            ele[j].style.background = 'cyan';
+            ele[j + 1].style.background = 'cyan';
+            if (parseInt(ele[j].style.height) > parseInt(ele[j + 1].style.height)) {
+                await delayTime(delay);
+                swap(ele[j], ele[j + 1]);
+            }
             ele[j].style.background = '#e43f5a';
             ele[j + 1].style.background = '#e43f5a';
         }
@@ -23,7 +29,7 @@ bubSortbtn.addEventListener('click', async function () {
     disableNewArrayBtn();
     enableStopSortingBtn();
     await bubble();
-    if(hasPressedStop==true){
+    if (hasPressedStop == true) {
         disableSpeedSlider();
     } else {
         enableSortingBtn();

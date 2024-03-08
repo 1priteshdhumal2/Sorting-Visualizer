@@ -1,5 +1,6 @@
-async function heapSort(arr, n) {
+//TO:DO fix the colors in heapify
 
+async function heapSort(arr, n) {
     // Build heap (rearrange array)
     for (var i = n / 2 - 1; i >= 0; i--) {
         if (hasPressedStop == true) {
@@ -38,20 +39,23 @@ async function heapify(arr, n, i) {
     var r = 2 * i + 2; // right = 2*i + 2
 
     // If left child is larger than root
+
     if (l < n && parseInt(arr[l].style.height) > parseInt(arr[largest].style.height)) {
-        // arr[l].style.background = 'lightblue';
+        // arr[l].style.background = 'lightblue'; 
         // arr[largest].style.background = 'cyan';
         largest = l;
         swap(arr[largest], arr[l]);
+        // arr[l].style.background = '#e43f5a';
     }
+
 
     // If right child is larger than largest so far
     if (r < n && parseInt(arr[r].style.height) > parseInt(arr[largest].style.height)) {
         // arr[r].style.background = 'lightgreen';
-        // arr[largest].style.background = 'cyan';
+        // arr[largest].style.background = 'cyan'; 
         largest = r;
         swap(arr[largest], arr[r]);
-        // arr[l].style.background = '#e43f5a';
+        // arr[l].style.background = '#e43f5a'; 
     }
 
     // If largest is not root

@@ -1,11 +1,8 @@
 // swap function util for sorting algorithms takes input of 2 DOM elements with .style.height feature
 function swap(el1, el2) {
-    console.log('In swap()');
-
-    let temp = el1.style.height; //third variable for swapping
+    let temp = el1.style.height;    //third variable for swapping
     el1.style.height = el2.style.height;
     el2.style.height = temp;
-
 }
 
 // Disables sorting buttons used in conjunction with enable, so that we can disable during sorting and enable buttons after it
@@ -141,7 +138,7 @@ newArrayButton.addEventListener("click", function () {
 });
 
 const stopSortingButton = document.querySelector(".stop");
-stopSortingButton.addEventListener("click", function(){
+stopSortingButton.addEventListener("click", function () {
     disableSortingBtn();
     disableSizeSlider();
     hasPressedStop = true;
